@@ -15,7 +15,7 @@ model Commentary {
   description String?
   score       Int
   userName    String
-  enable      Boolean
+  enable      Boolean @default(true)
   spot        Spot    @relation(fields: [IDSpot], references: [id])
   IDSpot      Int
 }
@@ -28,7 +28,7 @@ model Spot {
   city           String
   description    String?
   image          String
-  enable         Boolean
+  enable         Boolean  @default(true)
   commentaries   Commentary[]
 }
 
