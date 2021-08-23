@@ -4,7 +4,7 @@ CREATE TABLE `Commentary` (
     `description` VARCHAR(191),
     `score` INTEGER NOT NULL,
     `userName` VARCHAR(191) NOT NULL,
-    `enable` BOOLEAN NOT NULL,
+    `enable` BOOLEAN NOT NULL DEFAULT true,
     `IDSpot` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
@@ -19,7 +19,7 @@ CREATE TABLE `Spot` (
     `city` VARCHAR(191) NOT NULL,
     `description` VARCHAR(191),
     `image` VARCHAR(191) NOT NULL,
-    `enable` BOOLEAN NOT NULL,
+    `enable` BOOLEAN NOT NULL DEFAULT true,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

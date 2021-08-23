@@ -17,5 +17,28 @@ async function showCommentary(req,res) {
     })
 }
 
+async function updateCommentary(comm) {
+    const commentary = await prisma.commentary.update({
+        where: { id: parseInt(comm.id,10) },
+        data: {
+            description: comm.description,
+            score: parseInt(comm.score),
+            userName: comm.userName,
+            IDSpot: parseInt(comm.spot)
+        },
+    })
+}
+
+async function deleteCommentary(comm) {
+    const commentary = await prisma.commentary.update({
+        where: { id: parseInt(comm.id,10) },
+        data: {
+            enable: false
+        },
+    })
+}
+
 module.exports.createCommentary = createCommentary
 module.exports.showCommentary = showCommentary
+module.exports.updateCommentary = updateCommentary
+module.exports.deleteCommentary = deleteCommentary

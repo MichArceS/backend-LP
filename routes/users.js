@@ -9,4 +9,11 @@ router.post('/newUser', function(req, res, next) {
 
 router.get('/getUsers', userController.showUsers);
 
+
+router.post('/updateUser', function(req, res, next) {
+  console.log(req.body);
+  userController.updateUser(req.body)
+  res.send('respond with a resource');
+});
+
 module.exports = router;

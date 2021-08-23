@@ -9,4 +9,14 @@ router.post('/newSpot', function(req, res, next) {
 
 router.get('/getSpots', spotController.showSpot);
 
+router.post('/updateSpot', function(req, res, next) {
+  spotController.updateSpot(req.body)
+  res.send('respond with a resource');
+});
+
+router.post('/deleteSpot', function(req, res, next) {
+  spotController.deleteSpot(req.body)
+  res.send('respond with a resource');
+});
+
 module.exports = router;
