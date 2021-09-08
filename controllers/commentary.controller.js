@@ -38,7 +38,18 @@ async function deleteCommentary(comm) {
     })
 }
 
+async function showCommentarybyspot(idSpot, res) {
+    //const allEstaciones = await prisma.estacion.findMany()
+    prisma.commentary.findMany({
+            where: { IDSpot: parseInt(idSpot, 10) }
+        }).then(data =>{
+            res.send(data);
+        })
+    //console.dir(allEstaciones, { depth: null });
+}
+
 module.exports.createCommentary = createCommentary
 module.exports.showCommentary = showCommentary
 module.exports.updateCommentary = updateCommentary
 module.exports.deleteCommentary = deleteCommentary
+module.exports.showCommentarybyspot = showCommentarybyspot

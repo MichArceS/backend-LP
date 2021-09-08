@@ -19,5 +19,8 @@ router.post('/deleteCommentaries', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/getComBySpot/:idSpot', function(req, res, next){
+  comments = commentaryController.showCommentarybyspot(req.params.idSpot, res);
+});
 
 module.exports = router;
